@@ -218,7 +218,7 @@ class Game:
                     if selected != None:
                         if selected.side == self.board.turn and selected.action == board.Action.Start:
                             self.mode = Mode.Melee
-                            self.dicelog.add(selected.name + "initiating melee attack...")
+                            self.dicelog.add(selected.name + " initiating melee attack...")
 
 
             elif self.mode == Mode.EndTurn:
