@@ -1,0 +1,136 @@
+﻿
+## Setup
+
+The board layout must be agreed to by both players before play begins. Each player must have the chance to review both their roster and their opponents roster.
+
+Determine which player goes first; both players roll d6 with the highest roll deciding the order of play. Repeat as long as the die rolls tie. The player who goes first is player one, the other player is player two.
+
+Player one sets up first, placing their pieces in one half of the play field with no piece being placed within two spaces of the centre. Once player one is finished, player two sets up their pieces.
+
+Once both teams are set up, player begins with player one taking their turn.
+
+## Board Layout
+
+The game is played on a board of tiles. Each tile can have an effect on 
+entering or leaving it.
+
+- **.**  Empty ground. No effect
+- **T**  Tree. Blocks movement and visibility
+- **#**  Wall. Blocks movement and visibility
+- **+**  Door. Blocks visibility, not movement
+- **=**  Window. Blocks movement, but not visibility
+- **~**  Water. Costs two movement points to exit.
+- **^**  Brambles. Reduces visibility. Requires 3+ check to exit without 
+    falling over.
+
+## Units
+
+A unit has a name and type. Their type provides their traits and attributes. 
+Every attribute has a modifier value, this is the attribute value minus three.
+
+During play, a unit has both a state and a posture.
+
+On a player's turn, each unit can take a single action. Not all actions can
+be taken at all times or by all units.
+
+### Attributes
+
+- **Move.** Normal - maximum distance character can move.
+- **Combat.** Chance of hitting target in melee combat.
+- **Strength.** Damage dealt in melee combat.
+- **Ranged.** Chance of hitting target in ranged combat.
+- **Power.** Damage dealt in ranged combat.
+- **Evade.** Chance of dodging incoming attacks (ranged and melee).
+- **Health.** Amount of damage before character becomes injured.
+- **Defense.** Damage incoming attacks are reduced by.
+
+### Traits
+
+The specific rules for traits always override the basic rules presented below.
+
+- **Flying.** Do not roll to leave tiles with brambles or water. This unit receives a +1 bonus when attempting to withdraw.
+- **Large.** Units attacking this unit recieve a +1 bonus to hit this unit in 
+    ranged or melee combat.
+- **Small.** Units attacking this unit recieve a -1 penalty to hit this unit in
+    ranged or melee combat.
+    
+### Postures
+
+- **Standing.** Default state. Provides no bonuses or penalties.
+- **Prone.** The unit is laying on the ground and must stand up before they can 
+    move or attack. Also provides a defense bonus and reduces visiblity.
+
+### Statuses
+
+- **Stunned.** Unit can not act on next turn. Recovers at end of turn.
+- **Concussed.** Unit is placed prone and cannot act next turn. Roll d6 at end 
+    of turn. On a 4+ they can act next turn. Otherwise they are still 
+    concussed.
+- **Injured.** The unit has received a major injury and is removed from play.
+- **Adjacent.** The unit is adjacent to a unit on the opposing team
+
+### Actions
+
+#### Move
+
+- A unit can move as long as it has movement points remaining. This is true 
+    even if the cost of the move is greater than the remaining move points.
+- Each space of movement costs at least 1 point.
+- Exiting a water tile costs an extra point.
+- Prone units must stand before moving. This costs an extra movement point.
+- Moving while adjacent costs an extra movement point. When exiting an adjacent
+    tile, roll d6. If moving into an adjacent space, subtract 1. If the result
+    is 3 or less, the unit falls into the destination space and their action
+    ends.
+- When exiting a brambles space, a unit must roll d6. On a 1, the unit falls
+    down into their destination tile and their action ends.
+
+#### Attack
+
+- A unit cannot perform an attack when prone.
+- A unit can perform a melee attack against any unit that it is adjacent to.
+- To perform an attack, roll d6, add the attacker's combat score, subtract the
+    defender's evade score, then add the following bonuses as appropriate.
+    - The crowd bonus is equal to the number of units of the attacker's side 
+        adjacent to the defender minute the number of units of the defender's 
+        side adjacent to the attacker. The result may be negative.
+    - If the defender is prone, the attacker receives a -1 penalty.
+    - If the attack is being made as part of a charge, the attacker receives a -1 penalty
+- If the final result is one or less or a one was rolled on the die, the 
+    attacker takes consequences as though the defender had initiated the 
+    attack
+- If the final result is 4+, deal damage to the defender; this is the 
+    attacker's strength minus the defender's defense. If this reduce's the 
+    defender's health to below zero, they become injured and are removed 
+    from play. Damage dealt is always at least 1 point regardless of the 
+    defender's defense
+    - If the attacker's strength is greater than than the defender's strength,
+        the defender is knocked down.
+    - If the attacker's strength is at least 2 points greater than the 
+        defender's strength, the defender is also stunned
+- Otherwise the attack failed; nothing further happens
+
+#### Charge
+
+- The charge action allows a unit to move as though making a move action and to 
+    make a single attack at some point during that movement.
+- A charge action costs an extra point of move
+- The attack during a charge is made with a -1 penalty
+
+#### Fire
+
+- Units with non-zero ranged and power attributes can make a ranged attack with 
+    the fire action.
+- A fire action cannot be taken if the unit is adjacent.
+- Determine range to target. The range is the distance between the attacker and 
+    the defender (use the larger distance). The range penalty is one third of 
+    this, rounded down.
+- To perform a fire action, roll d6, add the attacker's ranged score and 
+    subtract the defender's evade score. Add the appropriate bonuses and 
+    penalties as follows:
+    - Subtract the range penalty
+- On a 4+, deal damage to the defender. This is the attacker's power attribute 
+    minus the defender's defence. If the defender's health is reduced to zero or 
+    less they are injured and removed from play.
+- Otherwise the attack failed; nothing further happens.
+
